@@ -5,6 +5,7 @@
     "ng": "ng",
     "start": "npm run build && wrangler pages dev dist/ncc-kids-workshop/browser",
     "build": "ng build",
+    "deploy": "npm run build && wrangler pages deploy dist/ncc-kids-workshop/browser --project-name=ncc-kids-workshop",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ncc-kids-workshop": "node dist/ncc-kids-workshop/server/server.mjs"

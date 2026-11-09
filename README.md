@@ -15,10 +15,10 @@ The script creates a `Registrations` tab and its header row on first use. Each a
 
 ## Cloudflare Pages deployment
 
-1. Push this repository to GitHub and create a Cloudflare Pages project connected to it.
-2. Set the build command to `npm run build` and the build output directory to `dist/ncc-kids-workshop/browser`.
+1. Push this repository to GitHub and create a Cloudflare Pages project connected to it. The Pages project name should be `ncc-kids-workshop` to match `wrangler.toml`.
+2. Set the build command to `npm run build` and the build output directory to `dist/ncc-kids-workshop/browser`. Do not use `npx wrangler deploy`; that command deploys Workers, not Pages.
 3. Set `APPS_SCRIPT_URL` in Cloudflare Pages project settings for production and preview deployments. The value in `wrangler.toml` is used by Wrangler locally and can be used for deployments made from this configuration.
-4. Deploy. Cloudflare Pages automatically deploys the function in `functions/api/register.ts` at `/api/register`.
+4. Cloudflare Pages automatically deploys the function in `functions/api/register.ts` at `/api/register`. For a manual CLI deployment, run `npm run deploy` (or `npx wrangler pages deploy dist/ncc-kids-workshop/browser --project-name=ncc-kids-workshop`).
 
 The function forwards validated registrations to `APPS_SCRIPT_URL`, keeping the browser request same-origin and avoiding Apps Script CORS preflight issues. The endpoint URL is public configuration, not a credential. The Apps Script deployment must allow access to anyone for public workshop registration.
 
