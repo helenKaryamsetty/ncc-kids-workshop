@@ -1,0 +1,6 @@
+name = "ncc-kids-workshop"
+compatibility_date = "2025-03-10"
+pages_build_output_dir = "./dist/ncc-kids-workshop/browser"
+
+[vars]
+APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_eHHxzu_NsoKvKM-da0zRu6Gstzo72tICduR0d6kHAI_rajBuLCRNnubU6ZVyo1eQ/exec"

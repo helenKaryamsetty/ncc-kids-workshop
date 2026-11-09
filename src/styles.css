@@ -1,1 +1,95 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=DM+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+	color-scheme: light;
+	font-family: 'DM Sans', sans-serif;
+	color: #172a55;
+	background: #8bdcff;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	--ink: #172a55;
+	--pink: #f24473;
+	--yellow: #ffd53d;
+	--purple: #782fc1;
+	--orange: #ff8a30;
+	--cream: #fff9e9;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; min-height: 100vh; }
+button, input { font: inherit; }
+button:focus-visible, input:focus-visible { outline: 3px solid #21b7a3; outline-offset: 3px; }
+.page-shell { position: relative; display: grid; min-height: 100vh; place-items: center; overflow: hidden; padding: 48px 20px 34px; background: radial-gradient(ellipse at 12% 18%, #d5f7ff 0 8%, transparent 28%), radial-gradient(ellipse at 87% 14%, #c4f1ff 0 10%, transparent 27%), linear-gradient(160deg, #76d2fa 0%, #a9eaff 48%, #81d8f8 100%); }
+.page-shell::before, .page-shell::after { position: absolute; z-index: 0; content: ''; pointer-events: none; }
+.page-shell::before { inset: auto -6% -110px; height: 210px; border-radius: 50% 50% 0 0; background: repeating-linear-gradient(165deg, transparent 0 21px, #7dca54 22px 33px, transparent 34px 52px), linear-gradient(#a0df58, #68bc46); transform: rotate(-2deg); }
+.page-shell::after { top: 8%; left: 5%; width: 110px; height: 52px; border-radius: 50px; background: #ffffffa8; box-shadow: 23px -17px 0 5px #ffffffa8, 48px 3px 0 -3px #ffffffa8, calc(100vw - 245px) 140px 0 2px #ffffff99, calc(100vw - 215px) 121px 0 9px #ffffff99; }
+.registration-card { position: relative; z-index: 1; width: min(100%, 590px); overflow: hidden; border: 5px solid #fff; border-radius: 30px; background: var(--cream); box-shadow: 0 18px 0 #2584b533, 0 24px 55px #23649a30; animation: card-arrive 650ms cubic-bezier(.2,.8,.2,1) both; }
+.brand-header { position: relative; padding: 28px 24px 18px; text-align: center; background: linear-gradient(180deg, #fff4bd 0%, #fff9e9 100%); }
+.brand-kicker, .section-eyebrow { margin: 0; color: #587095; font-size: 11px; font-weight: 800; letter-spacing: 2px; }
+.brand-name { display: flex; justify-content: center; align-items: baseline; gap: 9px; margin: 5px 0 -6px; font-family: 'Baloo 2', cursive; font-size: 56px; font-weight: 800; line-height: 1.08; }
+.brand-ncc { color: #172a55; }
+.brand-kids { color: #ed476b; }
+.workshop-ribbon { position: relative; display: inline-block; margin: 2px auto 0; padding: 0 25px 3px; transform: rotate(-1.5deg); }
+.workshop-ribbon::before { position: absolute; z-index: -1; inset: 12px -4px 8px; border-radius: 24px 18px 25px 17px; background: var(--yellow); content: ''; box-shadow: 0 5px 0 #f6a82a; }
+.workshop-ribbon h1 { margin: 0; color: #172a55; font-family: 'Baloo 2', cursive; font-size: clamp(42px, 11vw, 61px); font-weight: 800; line-height: 1.12; text-transform: uppercase; }
+.ribbon-star { position: absolute; color: var(--purple); font-size: 21px; }
+.ribbon-star-left { top: -4px; left: -13px; }
+.ribbon-star-right { right: -17px; bottom: -3px; color: var(--pink); }
+.brand-message { margin: 7px 0 0; color: #536485; font-size: 14px; font-weight: 600; }
+.event-details { display: flex; justify-content: center; flex-wrap: wrap; gap: 9px; padding: 14px 18px; border-block: 1px dashed #e2d5a9; background: #fffdf6; }
+.event-detail { display: inline-flex; min-height: 35px; align-items: center; gap: 6px; padding: 6px 11px; border-radius: 20px; background: #fff0c4; color: #29395e; font-size: 12px; font-weight: 800; white-space: nowrap; }
+.event-detail:nth-child(2) { background: #e7f7ff; }
+.event-detail:nth-child(3) { background: #fce8ef; }
+.event-detail.event-free { background: #e3f5d6; color: #347b38; }
+.form-section, .success-panel { padding: 25px 38px 30px; }
+.form-heading { display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; }
+.form-heading h2, .success-panel h2 { margin: 2px 0 0; color: var(--ink); font-family: 'Baloo 2', cursive; font-size: 25px; font-weight: 800; line-height: 1.15; }
+.form-doodle { display: grid; width: 39px; height: 39px; place-items: center; border-radius: 50%; background: #fce1eb; color: var(--pink); font-size: 23px; transform: rotate(-12deg); }
+.field-group { margin: 0 0 12px; }
+.field-group label { display: block; margin-bottom: 5px; color: #26375a; font-size: 13px; font-weight: 800; }
+.field-group input { display: block; width: 100%; height: 45px; padding: 0 14px; border: 1.5px solid #e6dfc9; border-radius: 11px; background: #fffefa; color: var(--ink); font-size: 14px; transition: border-color .18s ease, box-shadow .18s ease; }
+.field-group input::placeholder { color: #9299a7; }
+.field-group input:focus { border-color: #3cb5d1; box-shadow: 0 0 0 3px #3cb5d122; outline: 0; }
+.field-group input[aria-invalid='true'] { border-color: #db3d5d; }
+.field-hint, .field-error { display: block; margin-top: 5px; font-size: 11px; }
+.field-hint { color: #75809a; }
+.field-error { color: #c62848; font-weight: 700; }
+.submit-error { margin: 12px 0; padding: 10px 12px; border-radius: 9px; background: #ffeaed; color: #a3213a; font-size: 13px; font-weight: 600; }
+.register-button { display: flex; width: 100%; min-height: 52px; justify-content: center; align-items: center; gap: 12px; margin-top: 18px; border: 0; border-radius: 13px; background: linear-gradient(100deg, #f34d6d, #f47742); box-shadow: 0 5px 0 #ce3f50; color: white; cursor: pointer; font-family: 'Baloo 2', cursive; font-size: 19px; font-weight: 800; text-transform: uppercase; transition: transform .16s ease, box-shadow .16s ease, opacity .16s ease; }
+.register-button:hover:not(:disabled) { box-shadow: 0 7px 0 #ce3f50; transform: translateY(-2px); }
+.register-button:active:not(:disabled) { box-shadow: 0 2px 0 #ce3f50; transform: translateY(3px); }
+.register-button:disabled { cursor: wait; opacity: .8; }
+.spinner { width: 18px; height: 18px; border: 2px solid #ffffff80; border-top-color: #fff; border-radius: 50%; animation: spin .7s linear infinite; }
+.privacy-note { margin: 15px 0 0; color: #7a8292; font-size: 11px; text-align: center; }
+.privacy-note span { margin-right: 4px; }
+.success-panel { text-align: center; animation: card-arrive 450ms ease both; }
+.success-icon { display: grid; width: 62px; height: 62px; place-items: center; margin: 0 auto 12px; border: 4px solid white; border-radius: 50%; background: #87cc57; box-shadow: 0 0 0 3px #87cc57; color: #fff; font-size: 33px; font-weight: 800; }
+.success-panel h2 { margin-top: 5px; font-size: 30px; }
+.success-panel > p:not(.section-eyebrow) { margin: 9px auto 20px; color: #5a6780; line-height: 1.55; }
+.secondary-button { min-height: 42px; padding: 0 17px; border: 2px solid #e6d7a6; border-radius: 11px; background: #fffdf5; color: #34466b; cursor: pointer; font-weight: 800; }
+.secondary-button:hover { background: #fff2c6; }
+.page-footer { position: relative; z-index: 1; margin: 16px 0 0; color: #23618b; font-size: 13px; font-weight: 800; text-align: center; }
+.sky-decoration { position: absolute; z-index: 0; color: white; text-shadow: 0 2px 0 #4e9fc155; animation: bob 3.8s ease-in-out infinite; }
+.sky-decoration-one { top: 15%; right: 12%; color: #ffbe31; font-size: 42px; }
+.sky-decoration-two { bottom: 17%; left: 10%; color: #f65e91; font-size: 45px; animation-delay: .6s; }
+.sky-decoration-three { top: 25%; left: 13%; color: #8e56c6; font-size: 28px; animation-delay: 1s; }
+@keyframes spin { to { transform: rotate(360deg); } }
+@keyframes bob { 50% { transform: translateY(-8px) rotate(8deg); } }
+@keyframes card-arrive { from { opacity: 0; transform: translateY(13px) scale(.99); } to { opacity: 1; transform: translateY(0) scale(1); } }
+@media (max-width: 520px) {
+	.page-shell { padding: 24px 13px 22px; }
+	.registration-card { border-width: 4px; border-radius: 23px; }
+	.brand-header { padding: 22px 15px 16px; }
+	.brand-name { font-size: 49px; }
+	.brand-kicker { font-size: 10px; }
+	.brand-message { font-size: 12px; }
+	.event-details { gap: 7px; padding: 12px 8px; }
+	.event-detail { padding-inline: 9px; font-size: 11px; }
+	.form-section, .success-panel { padding: 22px 19px 25px; }
+	.field-group input { height: 46px; }
+	.sky-decoration-one { top: 8%; right: 4%; font-size: 30px; }
+	.sky-decoration-two { bottom: 8%; left: 3%; font-size: 32px; }
+	.sky-decoration-three { top: 26%; left: 4%; font-size: 22px; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; } }

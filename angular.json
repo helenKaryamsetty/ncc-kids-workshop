@@ -67,7 +67,8 @@
               "buildTarget": "ncc-kids-workshop:build:production"
             },
             "development": {
-              "buildTarget": "ncc-kids-workshop:build:development"
+              "buildTarget": "ncc-kids-workshop:build:development",
+              "proxyConfig": "proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"
@@ -97,5 +98,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e3faf918-6c9b-40d5-8865-45499baef638"
   }
 }

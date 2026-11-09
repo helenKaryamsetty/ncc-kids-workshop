@@ -1,10 +1,12 @@
 import { TestBed } from '@angular/core/testing';
+import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app.component';
 
 describe('AppComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [AppComponent],
+      providers: [provideHttpClient()],
     }).compileComponents();
   });
 
@@ -14,16 +16,25 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'ncc-kids-workshop' title`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('ncc-kids-workshop');
-  });
-
-  it('should render title', () => {
+  it('should render the workshop registration form', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, ncc-kids-workshop');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Workshop');
+    expect(compiled.querySelectorAll('form input').length).toBe(4);
+  });
+
+  it('should require all four registration fields', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const form = fixture.componentInstance.registrationForm;
+    expect(form.invalid).toBeTrue();
+    expect(Object.values(form.controls).every((control) => control.hasError('required'))).toBeTrue();
+  });
+
+  it('should reject invalid Indian mobile numbers', () => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const phone = fixture.componentInstance.registrationForm.controls.parentPhone;
+    phone.setValue('1234567890');
+    expect(phone.hasError('pattern')).toBeTrue();
   });
 });
