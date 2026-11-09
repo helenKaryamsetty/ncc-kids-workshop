@@ -24,6 +24,6 @@ The function forwards validated registrations to `APPS_SCRIPT_URL`, keeping the 
 
 ## Local development
 
-Run `npm install` and `npm start` with Node.js 18.20.8 or newer. The start script builds the app and runs Cloudflare Pages locally at `http://localhost:8788/`, including the `/api/register` function. The Apps Script URL is configured in `wrangler.toml`; set `APPS_SCRIPT_URL` in Cloudflare Pages project settings for deployed environments.
+Run `npm install` and `npm start` with Node.js 22.12.0 or newer. The start script builds the app and runs Cloudflare Pages locally at `http://localhost:8788/`, including the `/api/register` function. The Apps Script URL is configured in `wrangler.toml`; set `APPS_SCRIPT_URL` in Cloudflare Pages project settings for deployed environments.
 
 Run `npm run build` to create the production bundle, and `npm test -- --watch=false` to run the unit tests.
