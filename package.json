@@ -3,9 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "npm run build && wrangler pages dev dist/ncc-kids-workshop/browser",
+    "start": "npm run build && wrangler dev --port 8788",
     "build": "ng build",
-    "deploy": "npm run build && wrangler pages deploy dist/ncc-kids-workshop/browser --project-name=ncc-kids-workshop",
+    "deploy": "npm run build && wrangler deploy",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "serve:ssr:ncc-kids-workshop": "node dist/ncc-kids-workshop/server/server.mjs"
