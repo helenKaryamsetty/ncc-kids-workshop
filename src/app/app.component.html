@@ -52,11 +52,17 @@
 
           <div class="field-group">
             <label for="childClass">Class</label>
-            <input id="childClass" type="text" formControlName="childClass" maxlength="40" placeholder="For example, Class 4" [attr.aria-invalid]="registrationForm.controls.childClass.invalid && (registrationForm.controls.childClass.touched || submitted)" aria-describedby="childClass-error">
+            <select id="childClass" formControlName="childClass" required [attr.aria-invalid]="registrationForm.controls.childClass.invalid && (registrationForm.controls.childClass.touched || submitted)" aria-describedby="childClass-error">
+              <option value="" disabled>Select a class</option>
+              <option value="Toddlers">Toddlers</option>
+              <option value="Beginners">Beginners</option>
+              <option value="Primary">Primary</option>
+              <option value="Juniors">Juniors</option>
+              <option value="Teens">Teens</option>
+              <option value="Seniors">Seniors</option>
+            </select>
             @if (registrationForm.controls.childClass.touched && registrationForm.controls.childClass.hasError('required')) {
-              <span class="field-error" id="childClass-error">Please enter your child's class.</span>
-            } @else if (registrationForm.controls.childClass.touched && registrationForm.controls.childClass.hasError('maxlength')) {
-              <span class="field-error" id="childClass-error">Please keep the class under 40 characters.</span>
+              <span class="field-error" id="childClass-error">Please select your child's class.</span>
             }
           </div>
 

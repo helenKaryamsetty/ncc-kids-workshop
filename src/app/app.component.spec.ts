@@ -21,7 +21,10 @@ describe('AppComponent', () => {
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
     expect(compiled.querySelector('h1')?.textContent).toContain('Workshop');
-    expect(compiled.querySelectorAll('form input').length).toBe(4);
+    expect(compiled.querySelectorAll('form input').length).toBe(3);
+    expect(Array.from(compiled.querySelectorAll('#childClass option')).map((option) => option.textContent?.trim())).toEqual([
+      'Select a class', 'Toddlers', 'Beginners', 'Primary', 'Juniors', 'Teens', 'Seniors'
+    ]);
   });
 
   it('should require all four registration fields', () => {
