@@ -22,6 +22,7 @@
       <div class="event-detail"><span aria-hidden="true">🕥</span><span>10:30 AM onwards</span></div>
       <div class="event-detail"><span aria-hidden="true">📍</span><span>NCLC</span></div>
       <div class="event-detail event-free"><span aria-hidden="true">🎟️</span><span>FREE</span></div>
+      <div class="event-detail"><span aria-hidden="true">🍱</span><span>Lunch and snacks provided</span></div>
     </div>
 
     @if (isSubmitted) {
@@ -30,6 +31,7 @@
         <p class="section-eyebrow">YOU'RE ALL SET</p>
         <h2 id="success-title">Registration received!</h2>
         <p>We can't wait to see {{ registrationForm.controls.childName.value }} at the workshop.</p>
+        <p>Lunch and snacks will be provided during the session.</p>
         <button class="secondary-button" type="button" (click)="registerAnotherChild()">Register another child</button>
       </section>
     } @else {
